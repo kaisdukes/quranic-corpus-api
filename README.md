@@ -15,4 +15,4 @@ export GITHUB_TOKEN=...
 
 ## Logging
 
-By default, the service logs to `/var/log/corpus/quranic-corpus-api.log`. Ensure that this folder exists and that the service has correct permissions to write to the folder.
+By default, the API service logs to `/var/log/corpus/quranic-corpus-api.log`. Ensure that this folder exists and that the service has correct permissions to write to the folder.

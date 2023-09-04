@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar quranic-corpus-service.jar >/dev/null 2>&1 &
+java -jar quranic-corpus-api.jar >/dev/null 2>&1 &

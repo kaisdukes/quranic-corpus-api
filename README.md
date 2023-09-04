@@ -1,4 +1,8 @@
-# Quranic Corpus Service
+# Quranic Corpus API
+
+Backend server API for the Quranic Arabic Corpus.
+
+More details on the Corpus 2.0 project (and frontend code): https://github.com/kaisdukes/quranic-corpus
 
 ## Building Locally
 

@@ -1,0 +1,61 @@
+plugins {
+    id('com.github.johnrengelman.shadow') version '7.1.2'
+    id('io.micronaut.application') version '3.7.4'
+}
+
+version = '1.0.0'
+group = 'app.qurancorpus'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/kaisdukes/memseqdb")
+        credentials {
+            username = 'kaisdukes'
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
+}
+
+dependencies {
+    annotationProcessor('io.micronaut:micronaut-http-validation')
+    annotationProcessor('org.projectlombok:lombok')
+
+    implementation('jakarta.annotation:jakarta.annotation-api')
+    implementation('io.micronaut:micronaut-http-client')
+    implementation('io.micronaut:micronaut-jackson-databind')
+    implementation('io.micronaut:micronaut-validation')
+    implementation('org.codehaus.janino:janino:3.1.9')
+    implementation('memseqdb:memseqdb:1.0.0')
+
+    runtimeOnly('ch.qos.logback:logback-classic')
+
+    compileOnly('org.projectlombok:lombok')
+
+    testCompileOnly('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+    testImplementation('org.hamcrest:hamcrest')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+}
+
+application {
+    mainClass.set('app.qurancorpus.Application')
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion('17')
+    targetCompatibility = JavaVersion.toVersion('17')
+}
+
+micronaut {
+    runtime('netty')
+    testRuntime('junit5')
+    processing {
+        incremental(true)
+        annotations('app.qurancorpus.*')
+    }
+}

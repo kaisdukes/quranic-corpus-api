@@ -1,0 +1,9 @@
+micronaut:
+  server:
+    port: 6382
+    cors:
+      enabled: true
+netty:
+  default:
+    allocator:
+      max-order: 3

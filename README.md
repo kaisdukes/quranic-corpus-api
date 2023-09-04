@@ -1,8 +1,8 @@
 # Quranic Corpus API
 
-Backend server API for the Quranic Arabic Corpus.
+This repo contains the backend server API for the Quranic Arabic Corpus 2.0.
 
-More details on the Corpus 2.0 project (and frontend code): https://github.com/kaisdukes/quranic-corpus
+More details on the Corpus 2.0 project (and frontend code) can be found here: https://github.com/kaisdukes/quranic-corpus
 
 ## Building Locally
 
